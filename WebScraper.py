@@ -32,6 +32,8 @@ while role:
 
     print("Chose job role: ")
     c = input()
+    if c == "/exit":
+        break
 
     myJobs = results.find_all('h2', string=lambda text: c in text.lower())
     print(len(myJobs))
