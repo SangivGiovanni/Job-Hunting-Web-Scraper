@@ -6,10 +6,12 @@ a = input()
 print("Chose location (UK): ")
 b = input()
 
-URL = "https://www.monster.co.uk/jobs/search?q=" + a + "&where=" + b + "&cy=uk&client=power&stpage=1&page=4"
-page = requests.get(URL)
+URL1 = "https://www.monster.co.uk/jobs/search?q=" + a + "&where=" + b + "&cy=uk&client=power&stpage=1&page=4"
+URL2 = "https://www.indeed.co.uk/jobs?q=" + a + "&l=" + b
+page1 = requests.get(URL1)
+page2 = requests.get(URL2)
 
-soup = BeautifulSoup(page.content, 'html.parser')
+soup = BeautifulSoup(page1.content, 'html.parser')
 results = soup.find(id="SearchResults")
 
 jobElements = results.find_all('section', class_='card-content')
