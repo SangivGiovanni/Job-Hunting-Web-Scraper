@@ -11,10 +11,10 @@ URL2 = "https://www.indeed.co.uk/jobs?q=" + a + "&l=" + b
 page1 = requests.get(URL1)
 page2 = requests.get(URL2)
 
-soup = BeautifulSoup(page1.content, 'html.parser')
-results = soup.find(id="SearchResults")
+soup1 = BeautifulSoup(page1.content, 'html.parser')
+results1 = soup1.find(id="SearchResults")
 
-jobElements = results.find_all('section', class_='card-content')
+jobElements = results1.find_all('section', class_='card-content')
 
 for i in jobElements:
     title = i.find('h2', class_='title')
@@ -37,7 +37,7 @@ while role:
     if c == "/exit":
         break
 
-    myJobs = results.find_all('h2', string=lambda text: c in text.lower())
+    myJobs = results1.find_all('h2', string=lambda text: c in text.lower())
     print(len(myJobs))
 
     if len(myJobs) < 1:
