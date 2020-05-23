@@ -6,17 +6,20 @@ a = input()
 print("Chose location (UK): ")
 b = input()
 
-URL1 = "https://www.monster.co.uk/jobs/search?q=" + a + "&where=" + b + "&cy=uk&client=power&stpage=1&page=4"
-URL2 = "https://www.indeed.co.uk/jobs?q=" + a + "&l=" + b
-page1 = requests.get(URL1)
-page2 = requests.get(URL2)
+URLm = "https://www.monster.co.uk/jobs/search?q=" + a + "&where=" + b + "&cy=uk&client=power&stpage=1&page=4"
+URLi = "https://www.indeed.co.uk/jobs?q=" + a + "&l=" + b
+pagem = requests.get(URLm)
+pagei = requests.get(URLi)
 
-soup1 = BeautifulSoup(page1.content, 'html.parser')
-results1 = soup1.find(id="SearchResults")
+soupm = BeautifulSoup(pagem.content, 'html.parser')
+resultsm = soupm.find(id="SearchResults")
+soupi = BeautifulSoup(page1.content, 'html.parser')
+resulti = soupi.find(id="resultsCol")
 
-jobElements = results1.find_all('section', class_='card-content')
+jobElementsm = resultsm.find_all('section', class_='card-content')
+jobElementsi = resultsi.find_all('div', class_='jobsearch-SerpJobCard')
 
-for i in jobElements:
+for i in jobElementsm:
     title = i.find('h2', class_='title')
     company = i.find('div', class_='company')
     location = i.find('div', class_='location')
@@ -37,13 +40,16 @@ while role:
     if c == "/exit":
         break
 
-    myJobs = results1.find_all('h2', string=lambda text: c in text.lower())
-    print(len(myJobs))
+    myJobsm = resultsm.find_all('h2', string=lambda text: c in text.lower())
+    print(len(myJobsm))
+    print("\n")
 
-    if len(myJobs) < 1:
+    if len(myJobsm) < 1:
         continue
     else:
-        for j in myJobs:
+        print("Serch results from Monster: ")
+        print("\n")
+        for j in myJobsm:
             link = j.find('a')['href']
             print(j.text.strip())
             print(f"Apply here: {link}\n")
