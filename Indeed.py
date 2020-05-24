@@ -13,11 +13,12 @@ soupi = BeautifulSoup(pagei.content, 'html.parser')
 resulti = soupi.find(id="resultsCol")
 
 jobElementsi = resulti.find_all('div', class_='jobsearch-SerpJobCard')
+print(len(jobElementsi))
 
 for i in jobElementsi:
     title = i.find('h2', class_='title')
-    company = i.find('div', class_='company')
-    location = i.find('div', class_='location')
+    company = i.find('span', class_='company')
+    location = i.find('div', class_='location accessible-contrast-color-location')
     if None in (title, company, location):
         print(i)
         continue
@@ -25,3 +26,4 @@ for i in jobElementsi:
     print(company.text.strip())
     print(location.text.strip())
     print()
+
