@@ -27,3 +27,26 @@ for i in jobElementsi:
     print(location.text.strip())
     print()
 
+
+rolei = True
+
+while rolei:
+
+    print("Chose job role: ")
+    c = input()
+    if c == "/exit":
+        break
+
+    myJobsi = resulti.find_all('h2', string=lambda text: c in text.lower())
+    print(len(myJobsi))
+
+    if len(myJobsi) < 1:
+        continue
+    else:
+        print("Search results from Indeed: ")
+        print("\n")
+        for j in myJobsi:
+            link = j.find('a')['href']
+            print(j.text.strip())
+            print(f"Apply here: {link}\n")
+        break
