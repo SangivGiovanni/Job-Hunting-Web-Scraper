@@ -13,7 +13,6 @@ soupi = BeautifulSoup(pagei.content, 'html.parser')
 resulti = soupi.find(id="resultsCol")
 
 jobElementsi = resulti.find_all('div', class_='jobsearch-SerpJobCard')
-print(len(jobElementsi))
 
 for i in jobElementsi:
     title = i.find('h2', class_='title')
@@ -28,16 +27,16 @@ for i in jobElementsi:
     print()
 
 
-rolei = True
+role = True
 
-while rolei:
+while role:
 
     print("Chose job role: ")
-    c = input()
-    if c == "/exit":
+    i = input()
+    if i == "/exit":
         break
 
-    myJobsi = resulti.find_all('h2', string=lambda text: c in text.lower())
+    myJobsi = resulti.find_all('h2', string=lambda text: i in text.lower())
     print(len(myJobsi))
 
     if len(myJobsi) < 1:
