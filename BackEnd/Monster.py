@@ -11,13 +11,17 @@ def monster(a, b):
     results_m = soup_m.find(id="SearchResults")
 
     job_elements_m = results_m.find_all('section', class_='card-content')
+    print("\n")
+    print("\n")
+    print("RESULTS FROM MONSTER")
+    print("\n")
+    print("\n")
 
     for i in job_elements_m:
         title = i.find('h2', class_='title')
         company = i.find('div', class_='company')
         location = i.find('div', class_='location')
         if None in (title, company, location):
-            print(i)
             continue
         print(title.text.strip())
         print(company.text.strip())

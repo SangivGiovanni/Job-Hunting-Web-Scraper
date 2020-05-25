@@ -11,14 +11,18 @@ def indeed(a, b):
     result_i = soup_i.find(id="resultsCol")
 
     job_elements_i = result_i.find_all('div', class_='jobsearch-SerpJobCard')
+    print("\n")
+    print("\n")
+    print("RESULTS FROM INDEED")
+    print("\n")
+    print("\n")
+
 
     for i in job_elements_i:
         title = i.find('h2', class_='title')
         company = i.find('span', class_='company')
         location = i.find('div', class_='location accessible-contrast-color-location')
         if None in (title, company, location):
-            print(i)
-            print()
             continue
         print(title.text.strip())
         print(company.text.strip())
