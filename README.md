@@ -2,6 +2,6 @@
 
 This program scrapes information from the monster and indeed website to find you the most suited jobs you are looking for. Input field, location and job role to find jobs you can apply to all in one place. 
 
-Download BackEnd files and run WebScraper.py to find jobs!
+Download all files and run WebScraper.py to find jobs!
 
-(note: front end still being developed)
+note: example landing page for this project can be found here: https://github.com/SangivGiovanni/Project-Landing-Page
