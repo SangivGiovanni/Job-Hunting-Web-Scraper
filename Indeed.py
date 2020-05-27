@@ -16,7 +16,7 @@ def indeed(a, b):
         if j == 0:
             print("\n")
             print("\n")
-            print("RESULTS FROM INDEED")
+            print("RESULTS FROM INDEED:")
             print("\n")
             print("\n")
 
