@@ -13,7 +13,7 @@ def monster(a, b):
     job_elements_m = results_m.find_all('div', class_='flex-row')
     print("\n")
     print("\n")
-    print("RESULTS FROM MONSTER")
+    print("RESULTS FROM MONSTER:")
     print("\n")
     print("\n")
 
