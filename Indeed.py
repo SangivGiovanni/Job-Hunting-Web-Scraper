@@ -21,7 +21,7 @@ def indeed(a, b):
         title = i.find('h2', class_='title')
         company = i.find('span', class_='company')
         location = i.find('div', class_='location accessible-contrast-color-location')
-        link = i.find('a')['href']
+        link = title.find('a')['href']
 
         if None in (title, company, location):
             continue

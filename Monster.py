@@ -17,6 +17,8 @@ def monster(a, b):
     print("\n")
     print("\n")
 
+
+
     for i in job_elements_m:
         title = i.find('h2', class_='title')
         company = i.find('div', class_='company')
