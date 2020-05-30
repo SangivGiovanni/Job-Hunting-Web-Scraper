@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 pages = range(1,6)
 
-def linkedin(a,b)
+def linkedin(a,b):
     for page in pages:
 
         URL = 'https://uk.linkedin.com/jobs/search?keywords='+ a +'%20&location='+ b +'&trk=public_jobs_jobs-search-bar_search-submit&redirect=false&position=1&pageNum='+ str(page)
@@ -27,4 +27,4 @@ def linkedin(a,b)
             print(company.text)
             print(location.text)
             print(link)
-            print()
+            print() 
