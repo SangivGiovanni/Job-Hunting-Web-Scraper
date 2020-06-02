@@ -10,7 +10,9 @@ def indeed(a, b):
         page_g = requests.get(url_g)
 
         soup_g = BeautifulSoup(page_g.content, 'html.parser')
-        result_g = soup_g.find(class_="jlGrid")
+
+        print(soup_g)
+        result_g = soup_g.find('ul', class_="jlGrid hover")
 
         job_elements_g = result_g.find_all('li', class_='jl react-job-listing gdGrid')
         if j == 0:
@@ -33,6 +35,3 @@ def indeed(a, b):
             print(location.text.strip())
             print(link)
             print()
-
-
-indeed("programmer", "london")
