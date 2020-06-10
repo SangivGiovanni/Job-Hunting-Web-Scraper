@@ -10,5 +10,5 @@ b = input()
 
 monster(a, b)
 indeed(a, b)
-r = reed(a, b)
+reed(a, b)
 l = linkedin(a, b)
