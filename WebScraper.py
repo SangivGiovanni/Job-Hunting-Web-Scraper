@@ -8,7 +8,7 @@ a = input()
 print("Choose location (UK): ")
 b = input()
 
-m = monster(a, b)
+monster(a, b)
 i = indeed(a, b)
 r = reed(a, b)
 l = linkedin(a, b)
